@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1699BA352E0E9B79008CEF0C /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1699BA342E0E9B79008CEF0C /* libSDL2-2.0.0.dylib */; };
+		1699BA372E0E9D40008CEF0C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1699BA362E0E9D40008CEF0C /* OpenGL.framework */; };
+		1699BA392E0EA317008CEF0C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1699BA382E0EA317008CEF0C /* libsqlite3.tbd */; };
+		1699BA3B2E0EA5DC008CEF0C /* PCSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1699BA3A2E0EA5DC008CEF0C /* PCSC.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		1699BA0F2E0E94F3008CEF0C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +27,10 @@
 
 /* Begin PBXFileReference section */
 		1699BA112E0E94F3008CEF0C /* NFC_GUI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NFC_GUI; sourceTree = BUILT_PRODUCTS_DIR; };
+		1699BA342E0E9B79008CEF0C /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../../opt/homebrew/Cellar/sdl2/2.32.8/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
+		1699BA362E0E9D40008CEF0C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		1699BA382E0EA317008CEF0C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1699BA3A2E0EA5DC008CEF0C /* PCSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PCSC.framework; path = System/Library/Frameworks/PCSC.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,6 +46,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1699BA3B2E0EA5DC008CEF0C /* PCSC.framework in Frameworks */,
+				1699BA392E0EA317008CEF0C /* libsqlite3.tbd in Frameworks */,
+				1699BA372E0E9D40008CEF0C /* OpenGL.framework in Frameworks */,
+				1699BA352E0E9B79008CEF0C /* libSDL2-2.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				1699BA132E0E94F3008CEF0C /* NFC_GUI */,
+				1699BA332E0E9B79008CEF0C /* Frameworks */,
 				1699BA122E0E94F3008CEF0C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +71,17 @@
 				1699BA112E0E94F3008CEF0C /* NFC_GUI */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1699BA332E0E9B79008CEF0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1699BA3A2E0EA5DC008CEF0C /* PCSC.framework */,
+				1699BA382E0EA317008CEF0C /* libsqlite3.tbd */,
+				1699BA362E0E9D40008CEF0C /* OpenGL.framework */,
+				1699BA342E0E9B79008CEF0C /* libSDL2-2.0.0.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +272,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/imgui",
+					"$(SRCROOT)/imgui/backends",
+					"/opt/homebrew/Cellar/sdl2/2.32.8/include/SDL2/**",
+				);
+				LIBRARY_SEARCH_PATHS = /opt/homebrew/Cellar/sdl2/2.32.8/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,6 +286,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/imgui",
+					"$(SRCROOT)/imgui/backends",
+					"/opt/homebrew/Cellar/sdl2/2.32.8/include/SDL2/**",
+				);
+				LIBRARY_SEARCH_PATHS = /opt/homebrew/Cellar/sdl2/2.32.8/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
